@@ -1,0 +1,136 @@
+@font-face {
+  font-family: "LeeSeoyun";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* body태그 자체에 css 요소 부여 */
+body {
+  font-family: "LeeSeoyun";
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #ddd;
+}
+
+.main{
+  font-size: 30px;
+  text-align: center;
+}
+.take-photo{
+  font-size: 40px;
+  text-decoration: none;  
+  color: black;
+}
+#frame-color{
+  font-size: 40px;
+  text-decoration: none;  
+  color: black;
+}
+
+#frame{
+  margin-top: 20px;
+  height: 450px;
+}
+
+.container {
+  margin: 30px;
+  width: 390px;
+  background-color: #ff9d73;
+  height: 100%;
+}
+
+.photos {
+  margin-top: 30px;
+}
+
+.photo-frame {
+  background-color: white;
+  margin: 15px 20px;
+  height: 220px;
+  background-size: cover;
+  background-position-y: center;
+  position: relative;
+}
+
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.f-title {
+  font-size: 25px;
+  font-weight: 900;
+  color: white;
+}
+.f-date {
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+}
+#image1 {
+	background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Logo_IdFM_M%C3%A9tro_1.svg/1920px-Logo_IdFM_M%C3%A9tro_1.svg.png");
+}
+
+#image2 {
+	background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Logo_IdFM_M%C3%A9tro_2.svg/480px-Logo_IdFM_M%C3%A9tro_2.svg.png");
+}
+
+#image3 {
+	background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Logo_IdFM_M%C3%A9tro_3.svg/480px-Logo_IdFM_M%C3%A9tro_3.svg.png");
+}
+
+#image4 {
+	background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Logo_IdFM_M%C3%A9tro_4.svg/480px-Logo_IdFM_M%C3%A9tro_4.svg.png")}
+
+.photo-description {
+  color: white;
+  background-color: black;
+  width: fit-content;
+  padding: 0 20px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 0;
+  transform: translate(-50%);
+  left: 50%;
+}
+
+.hideText {
+	opacity: 0;
+}
+
+.changeText {
+  color: orchid;
+}
+.reText {
+  color: black;
+}
+
+.showText {
+	opacity: 1;
+  transition: opacity 0.5s linear;
+}
+
+.colors{
+  float:left;
+  padding: 10px;
+  margin: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+#black-btn{ background-color: black;color: white;}
+#wine-btn{ background-color: #871B4D;}
+#green-btn{ background-color: #7FFF00;}
+#white-btn{ background-color: #fff;}
+#blue-btn{ background-color: #0000FF;}
+/* transition : 나타날 때 0.5초동안 천천히 나타나는 효과를 주라는 의미에요 */

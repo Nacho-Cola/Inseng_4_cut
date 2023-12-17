@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>인생네컷</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="App.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+</head>
+<body>
+    <div id="export" class="container">
+			<div class="photos">
+	      <div 
+        id="image1"
+        class="photo-frame"
+        onmouseover="showText(1)"
+        onmouseout="hideText(1)"
+        onclick="replace_image(1)">
+					<span id="desc1" class="photo-description">
+						클릭해서 사진 변경
+					</span>
+				</div>
+	      <div 
+        id="image2" class="photo-frame"
+        onmouseover="showText(2)"
+        onmouseout="hideText(2)"
+        onclick="replace_image(2)">
+					<span id="desc2" class="photo-description">
+						클릭해서 사진 변경
+					</span>
+				</div>
+	      <div id="image3"
+        class="photo-frame"
+        onmouseover="showText(3)"
+        onmouseout="hideText(3)"
+        onclick="replace_image(3)">
+					<span id="desc3" class="photo-description">
+						클릭해서 사진 변경
+					</span>
+				</div>
+	      <div id="image4"
+        class="photo-frame"
+        onmouseover="showText(4)"
+        onmouseout="hideText(4)"
+        onclick="replace_image(4)">
+					<span id="desc4" class="photo-description">
+						클릭해서 사진 변경
+					</span>
+				</div>
+			</div>
+			<div class="footer">
+				<p class="f-title">이동네트워트</p>
+			  <p class="f-date">2023.11.22</p>
+			</div>
+    </div>
+    <div>
+      <div
+      class="take-photo"
+      onclick="downloadImg()"
+      onmouseover="changeText()"
+      onmouseout="reText()"
+      style="padding: 40px; height: 40px; padding: 20px;font-size: 40px;font-weight: 700; margin: 40px;text-align: center;"
+      >저장하기
+      </div>
+      <div
+      class="frame-color"
+      style="padding: 40px; height: 40px; padding: 20px;font-size: 40px;font-weight: 700; margin: 40px; text-align: center;"
+      >프레임변경
+      <div>
+        <div 
+        id='black-btn'
+        class="colors"
+        onclick="chageFrameColor(1)"></div>
+        <div 
+        id='white-btn'
+        class="colors"
+        onclick="chageFrameColor(2)"></div>
+        <div 
+        id='green-btn'
+        class="colors"
+        onclick="chageFrameColor(3)"></div>
+        <div 
+        id='wine-btn'
+        class="colors"
+        onclick="chageFrameColor(4)"></div>
+        <div 
+        id='blue-btn'
+        class="colors"
+        onclick="chageFrameColor(5)"></div>
+      </div>
+      </div>
+  </div>
+  
+</body>
+
+
+</html>

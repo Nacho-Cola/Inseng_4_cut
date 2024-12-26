@@ -1,116 +1,83 @@
-
-
-
 function showText(number) {
-  if (number === 1) {
-    document.querySelector("#desc1").classList.remove("hideText");
-    document.querySelector("#desc1").classList.add("showText");
-  } else if (number === 2) {
-    document.querySelector("#desc2").classList.remove("hideText");
-    document.querySelector("#desc2").classList.add("showText");
-  } else if (number === 3) {
-    document.querySelector("#desc3").classList.remove("hideText");
-    document.querySelector("#desc3").classList.add("showText");
-  }else {
-    document.querySelector("#desc4").classList.remove("hideText");
-    document.querySelector("#desc4").classList.add("showText");
+  const desc = document.querySelector(`#desc${number}`);
+  if (desc) {
+    desc.classList.remove("hideText");
+    desc.classList.add("showText");
   }
 }
 
 function hideText(number) {
-  if (number === 1) {
-    document.querySelector("#desc1").classList.remove("showText");
-    document.querySelector("#desc1").classList.add("hideText");
-  } else if (number === 2) {
-    document.querySelector("#desc2").classList.remove("showText");
-    document.querySelector("#desc2").classList.add("hideText");
-  } else if (number === 3) {
-    document.querySelector("#desc3").classList.remove("showText");
-    document.querySelector("#desc3").classList.add("hideText");
-  }else {
-    document.querySelector("#desc4").classList.remove("showText");
-    document.querySelector("#desc4").classList.add("hideText");
+  const desc = document.querySelector(`#desc${number}`);
+  if (desc) {
+    desc.classList.remove("showText");
+    desc.classList.add("hideText");
   }
 }
 
-function changeText(){
-  document.querySelector(".take-photo").classList.remove("reText");
-  document.querySelector(".take-photo").classList.add("changeText");
-  
-}
-function reText(number){
-  document.querySelector(".take-photo").classList.remove("changeText");
-  document.querySelector(".take-photo").classList.add("reText");
+function changeText() {
+  const takePhoto = document.querySelector(".take-photo");
+  if (takePhoto) {
+    takePhoto.classList.remove("reText");
+    takePhoto.classList.add("changeText");
+  }
 }
 
-function replace_image(number) {
+function reText() {
+  const takePhoto = document.querySelector(".take-photo");
+  if (takePhoto) {
+    takePhoto.classList.remove("changeText");
+    takePhoto.classList.add("reText");
+  }
+}
+
+function replaceImage(number) {
   const fileInput = document.createElement("input");
   fileInput.type = "file";
-  
+
   fileInput.addEventListener("change", function(event) {
-      const file = event.target.files[0];
+    const file = event.target.files[0];
+    if (file) {
       const reader = new FileReader();
 
       reader.onload = function(e) {
-        previewImage = e.target.result;
-        if(number === 1){
-         document.getElementById('image1').style.backgroundImage=`url(${previewImage})`
-        } else if (number === 2){
-          document.getElementById('image2').style.backgroundImage=`url(${previewImage})`
-        } else if (number === 3){
-          document.getElementById('image3').style.backgroundImage=`url(${previewImage})`
-        } else if (number === 4){
-          document.getElementById('image4').style.backgroundImage=`url(${previewImage})`
+        const previewImage = e.target.result;
+        const imageElement = document.getElementById(`image${number}`);
+        if (imageElement) {
+          imageElement.style.backgroundImage = `url(${previewImage})`;
         }
-      }
+      };
       reader.readAsDataURL(file);
+    }
   });
 
   fileInput.click();
 }
 
-function downloadImg (){
+function downloadImg() {
   html2canvas(document.querySelector("#export")).then(canvas => {
-    let imgData = canvas.toDataURL();
-    let a = document.createElement('a');
+    const imgData = canvas.toDataURL();
+    const a = document.createElement("a");
     a.href = imgData;
-    a.download = 'image.png';
+    a.download = "image.png";
     a.click();
   });
 }
 
+function changeFrameColor(number) {
+  const colors = [
+    { background: "black", text: "white" },
+    { background: "white", text: "black" },
+    { background: "#7FFF00", text: "white" },
+    { background: "#871B4D", text: "white" },
+    { background: "#0000FF", text: "white" }
+  ];
 
-function chageFrameColor(number) {
-  var color;
-  switch(number){
-      case 1: 
-          color = 'black'; 
-          text = 'white';
-          break;
-      case 2:
-          color = 'white'; 
-          text = 'black';
-          break;
-      case 3: 
-          color = '#7FFF00'; 
-          text = 'white';
-          break;
-      case 4: 
-          color = '#871B4D'; 
-          text = 'white';
-          break;
-      case 5: 
-          color = '#0000FF'; 
-          text = 'white';
-          break;
-      default: 
-          color = 'black';
-          text = 'white';
-  }
-  document.querySelector("#export").style.backgroundColor = color;
-  document.querySelector(".f-title").style.color = text;
-  document.querySelector(".f-date").style.color = text;
+  const colorScheme = colors[number - 1] || colors[0];
+  const exportElement = document.querySelector("#export");
+  const titleElement = document.querySelector(".f-title");
+  const dateElement = document.querySelector(".f-date");
+
+  if (exportElement) exportElement.style.backgroundColor = colorScheme.background;
+  if (titleElement) titleElement.style.color = colorScheme.text;
+  if (dateElement) dateElement.style.color = colorScheme.text;
 }
-
-  
-  

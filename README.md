@@ -3,6 +3,11 @@
 이동네트워크 과제로 개발된 웹 애플리케이션입니다. 
 사용자는 인터페이스를 통해 네컷 사진을 생성하고, 이미지 파일로 저장할 수 있습니다. 각 사진 프레임을 클릭하여 이미지를 업로드하거나 프레임 색상을 변경할 수 있으며, 최종 결과물을 다운로드할 수 있습니다.
 
+
+<img width="944" alt="Screenshot 2024-12-26 at 5 56 12 PM" src="https://github.com/user-attachments/assets/c8746bfd-a539-4601-bf6c-cdb00ec03492" style="width: 30%; margin-right: 10px;">
+<img width="944" alt="Screenshot 2024-12-26 at 5 49 56 PM" src="https://github.com/user-attachments/assets/6a07960e-35e2-490c-8f4a-4d5359f3333d" style="width: 30%; margin-right: 10px;">
+<img width="944" alt="Screenshot 2024-12-26 at 5 55 54 PM" src="https://github.com/user-attachments/assets/d9dd0c20-d1a7-4e81-86c9-68a8b2aa7a36" style="width: 30%; margin-right: 10px;">
+
 ## 주요 기능
 
 ### 1. 사진 프레임 업로드
@@ -34,6 +39,5 @@
 ├── App.js              # JavaScript 로직
 ├── README.md           # 프로젝트 설명 문서
 ```
-
 
 
